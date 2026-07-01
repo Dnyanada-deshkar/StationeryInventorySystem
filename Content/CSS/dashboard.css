@@ -1,0 +1,565 @@
+﻿/*==========================================
+            DASHBOARD
+==========================================*/
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/*==========================================
+            HERO
+==========================================*/
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg,#ffffff,#faf6f1);
+    border-radius: 24px;
+    padding: 32px 36px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.05);
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    color: #3B2415;
+    font-weight: 700;
+}
+
+.hero-text span {
+    color: #B56A2F;
+}
+
+.hero-text p {
+    margin-top: 10px;
+    color: #7B7B7B;
+    font-size: 16px;
+}
+
+/*==========================================
+            BUTTON
+==========================================*/
+
+.add-btn {
+    border: none;
+    background: linear-gradient(135deg,#B56A2F,#8C4C22);
+    color: white;
+    padding: 15px 24px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: .3s;
+    box-shadow: 0 12px 25px rgba(181,106,47,.25);
+}
+
+    .add-btn:hover {
+        transform: translateY(-3px);
+    }
+
+/*==========================================
+            KPI GRID
+==========================================*/
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 22px;
+}
+
+/*==========================================
+            KPI CARD
+==========================================*/
+
+.kpi-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    padding: 24px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .35s;
+    cursor: pointer;
+    min-height: 135px;
+}
+
+    .kpi-card:hover {
+        transform: translateY(-8px);
+    }
+
+/*==========================================
+            COLORS
+==========================================*/
+
+.green {
+    background: linear-gradient(135deg,#5BC88B,#2EAE68);
+}
+
+.orange {
+    background: linear-gradient(135deg,#F6AE54,#E68A2E);
+}
+
+.purple {
+    background: linear-gradient(135deg,#A86EFF,#7E4FE6);
+}
+
+.red {
+    background: linear-gradient(135deg,#FF7B7B,#E64E4E);
+}
+
+/*==========================================
+            ICON
+==========================================*/
+
+.kpi-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,.20);
+    backdrop-filter: blur(10px);
+}
+
+    .kpi-icon i {
+        font-size: 28px;
+    }
+
+/*==========================================
+            TEXT
+==========================================*/
+
+.kpi-card span {
+    font-size: 15px;
+    opacity: .92;
+}
+
+.kpi-card h2 {
+    margin-top: 10px;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+/*==========================================
+        GLOW EFFECT
+==========================================*/
+
+.kpi-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(255,255,255,.12);
+    border-radius: 50%;
+    top: -70px;
+    right: -70px;
+}
+
+.kpi-card::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,.10);
+    border-radius: 50%;
+    bottom: -50px;
+    left: -30px;
+}
+
+/*==========================================
+        RESPONSIVE
+==========================================*/
+
+@media(max-width:1200px) {
+
+    .kpi-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px) {
+
+    .hero-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*==========================================
+            CHART ROW
+==========================================*/
+
+.chart-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+/*==========================================
+            CARD
+==========================================*/
+
+.chart-card,
+.table-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.05);
+    transition: .35s;
+    border: 1px solid rgba(0,0,0,.04);
+}
+
+    .chart-card:hover,
+    .table-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 45px rgba(0,0,0,.08);
+    }
+
+/*==========================================
+        HEADER
+==========================================*/
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+    .card-header h3 {
+        font-size: 20px;
+        color: #3D2415;
+        font-weight: 700;
+    }
+
+    .card-header select {
+        border: none;
+        outline: none;
+        background: #F8F5F1;
+        padding: 10px 14px;
+        border-radius: 12px;
+        color: #7d4a21;
+        font-weight: 600;
+    }
+
+/*==========================================
+        CHART PLACEHOLDER
+==========================================*/
+
+.chart-placeholder {
+    height: 320px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient( 135deg, #F9F4EF, #F3ECE4);
+    color: #B16A32;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px dashed #E6D4C2;
+}
+
+.chart-card.small .chart-placeholder {
+    height: 320px;
+}
+
+/*==========================================
+        TABLE GRID
+==========================================*/
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+/*==========================================
+        TABLE
+==========================================*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #FBF7F2;
+}
+
+    thead th {
+        padding: 16px;
+        text-align: left;
+        color: #6F4A2A;
+        font-size: 14px;
+        font-weight: 700;
+        border-bottom: 1px solid #EFE6DD;
+    }
+
+tbody td {
+    padding: 16px;
+    color: #555;
+    border-bottom: 1px solid #F2ECE6;
+}
+
+tbody tr {
+    transition: .25s;
+}
+
+    tbody tr:hover {
+        background: #FCFAF7;
+    }
+
+/*==========================================
+        VIEW ALL
+==========================================*/
+
+.card-header a {
+    text-decoration: none;
+    color: #A45C2B;
+    font-weight: 600;
+}
+
+    .card-header a:hover {
+        color: #7D4A21;
+    }
+
+/*==========================================
+        LOW STOCK
+==========================================*/
+
+.table-card:last-child tbody td:last-child {
+    font-weight: 700;
+    color: #E74C3C;
+}
+
+/*==========================================
+        SCROLL TABLE
+==========================================*/
+
+.table-card {
+    overflow: hidden;
+}
+
+    .table-card table {
+        margin-top: 5px;
+    }
+
+/*==========================================
+        FLOATING ANIMATION
+==========================================*/
+
+@keyframes floatCard {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.kpi-card {
+    animation: floatCard 5s ease-in-out infinite;
+}
+
+    .kpi-card:nth-child(2) {
+        animation-delay: .2s;
+    }
+
+    .kpi-card:nth-child(3) {
+        animation-delay: .4s;
+    }
+
+    .kpi-card:nth-child(4) {
+        animation-delay: .6s;
+    }
+
+/*==========================================
+        HERO ANIMATION
+==========================================*/
+
+.hero-section {
+    animation: fadeTop .7s ease;
+}
+
+@keyframes fadeTop {
+
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*==========================================
+        CARD ANIMATION
+==========================================*/
+
+.chart-card,
+.table-card {
+    animation: fadeUp .8s ease;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*==========================================
+        GLASS EFFECT
+==========================================*/
+
+.chart-card,
+.table-card {
+    background: rgba(255,255,255,.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+/*==========================================
+        CHART PLACEHOLDER
+==========================================*/
+
+.chart-placeholder {
+    position: relative;
+    overflow: hidden;
+}
+
+    .chart-placeholder::before {
+        content: "";
+        position: absolute;
+        top: -120px;
+        right: -80px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: rgba(181,106,47,.08);
+    }
+
+    .chart-placeholder::after {
+        content: "";
+        position: absolute;
+        bottom: -80px;
+        left: -50px;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background: rgba(90,180,120,.08);
+    }
+
+/*==========================================
+        BUTTON HOVER
+==========================================*/
+
+.add-btn:hover {
+    box-shadow: 0 18px 35px rgba(181,106,47,.35);
+}
+
+/*==========================================
+        TABLE STATUS
+==========================================*/
+
+tbody tr td:last-child {
+    font-weight: 600;
+}
+
+/*==========================================
+        SOFT BORDER
+==========================================*/
+
+.chart-card,
+.table-card,
+.hero-section {
+    border: 1px solid rgba(0,0,0,.04);
+}
+
+/*==========================================
+        MOBILE
+==========================================*/
+
+@media(max-width:1200px) {
+
+    .chart-row {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:768px) {
+
+    .dashboard {
+        gap: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .chart-placeholder {
+        height: 240px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+        .card-header select {
+            width: 100%;
+        }
+
+    table {
+        font-size: 13px;
+    }
+}
+
+/*==========================================
+        PREMIUM SHADOWS
+==========================================*/
+
+.hero-section {
+    box-shadow: 0 20px 45px rgba(0,0,0,.05);
+}
+
+.chart-card {
+    box-shadow: 0 15px 40px rgba(0,0,0,.05);
+}
+
+.table-card {
+    box-shadow: 0 15px 40px rgba(0,0,0,.05);
+}

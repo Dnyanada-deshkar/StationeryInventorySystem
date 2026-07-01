@@ -1,0 +1,172 @@
+﻿/*=========================
+        NAVBAR
+==========================*/
+
+.top-navbar {
+    height: 82px;
+    margin-left: 290px;
+    padding: 0 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,246,241,.82);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+/* Left */
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.menu-toggle {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 10px 22px rgba(0,0,0,.08);
+    cursor: pointer;
+    transition: .3s;
+}
+
+    .menu-toggle:hover {
+        transform: translateY(-2px);
+    }
+
+    .menu-toggle i {
+        font-size: 18px;
+        color: #7d4a21;
+    }
+
+.page-title h2 {
+    font-size: 28px;
+    color: #3d2415;
+}
+
+.page-title span {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Search */
+
+.search-box {
+    width: 420px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,.05);
+}
+
+    .search-box i {
+        color: #888;
+    }
+
+    .search-box input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 15px;
+    }
+
+/* Right */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Buttons */
+
+.nav-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 14px;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,.06);
+    transition: .3s;
+}
+
+    .nav-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .nav-btn i {
+        font-size: 18px;
+        color: #6c4a30;
+    }
+
+/* Notification */
+
+.badge-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff5757;
+    position: absolute;
+    right: 13px;
+    top: 12px;
+}
+
+/* Profile */
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 15px;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,.06);
+    cursor: pointer;
+    transition: .3s;
+}
+
+    .profile-card:hover {
+        transform: translateY(-2px);
+    }
+
+.profile-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#b77742,#7d4a21);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile-info h4 {
+    font-size: 15px;
+    color: #3d2415;
+}
+
+.profile-info span {
+    font-size: 12px;
+    color: #888;
+}
+
+.profile-card .fa-chevron-down {
+    color: #888;
+    font-size: 12px;
+}

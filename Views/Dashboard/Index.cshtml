@@ -1,0 +1,301 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="dashboard">
+
+    <!-- ================= HERO ================= -->
+
+    <div class="hero-section">
+
+        <div class="hero-text">
+
+            <h1>
+                Good Morning,
+                <span>Admin 👋</span>
+            </h1>
+
+            <p>
+                Welcome back. Here's what's happening in your inventory today.
+            </p>
+
+        </div>
+
+        <button class="add-btn">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Product
+
+        </button>
+
+    </div>
+
+    <!-- ================= KPI ================= -->
+
+    <div class="kpi-grid">
+
+        <div class="kpi-card green">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-box"></i>
+
+            </div>
+
+            <div>
+
+                <span>Total Products</span>
+
+                <h2>248</h2>
+
+            </div>
+
+        </div>
+
+        <div class="kpi-card orange">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+            </div>
+
+            <div>
+
+                <span>Categories</span>
+
+                <h2>18</h2>
+
+            </div>
+
+        </div>
+
+        <div class="kpi-card purple">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-truck"></i>
+
+            </div>
+
+            <div>
+
+                <span>Suppliers</span>
+
+                <h2>24</h2>
+
+            </div>
+
+        </div>
+
+        <div class="kpi-card red">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+            </div>
+
+            <div>
+
+                <span>Low Stock</span>
+
+                <h2>12</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= CHARTS ================= -->
+
+    <div class="chart-row">
+
+        <div class="chart-card big">
+
+            <div class="card-header">
+
+                <h3>Inventory Overview</h3>
+
+                <select>
+
+                    <option>This Week</option>
+
+                    <option>This Month</option>
+
+                </select>
+
+            </div>
+
+            <div class="chart-placeholder">
+
+                Sales Chart
+
+            </div>
+
+        </div>
+
+        <div class="chart-card">
+
+            <div class="card-header">
+
+                <h3>Stock Distribution</h3>
+
+            </div>
+
+            <div class="chart-placeholder">
+
+                Doughnut Chart
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= TABLES ================= -->
+
+    <div class="bottom-grid">
+
+        <div class="table-card">
+
+            <div class="card-header">
+
+                <h3>Recent Transactions</h3>
+
+                <a href="#">View All</a>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Invoice</th>
+
+                        <th>Customer</th>
+
+                        <th>Amount</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>INV-1001</td>
+
+                        <td>Rahul Sharma</td>
+
+                        <td>₹1,250</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>INV-1002</td>
+
+                        <td>Anjali Patil</td>
+
+                        <td>₹850</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>INV-1003</td>
+
+                        <td>Akshay Jain</td>
+
+                        <td>₹3,420</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>INV-1004</td>
+
+                        <td>Pooja Verma</td>
+
+                        <td>₹670</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="table-card">
+
+            <div class="card-header">
+
+                <h3>Low Stock Alerts</h3>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Product</th>
+
+                        <th>Qty</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Camlin Pen</td>
+
+                        <td style="color:red;">8</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Notebook</td>
+
+                        <td style="color:red;">5</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Fevicol</td>
+
+                        <td style="color:red;">3</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Stapler Pins</td>
+
+                        <td style="color:red;">2</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
