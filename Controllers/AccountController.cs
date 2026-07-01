@@ -1,30 +1,44 @@
 ﻿using System.Web.Mvc;
+using System.Web.Security;
 using StationeryInventorySystem.Models;
 
 namespace StationeryInventorySystem.Controllers
 {
     public class AccountController : Controller
     {
+
         public ActionResult Login()
         {
+            ViewBag.Error = TempData["Error"];
             return View();
         }
 
         [HttpPost]
         public ActionResult Login(LoginViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                if (model.Username == "admin" &&
-                    model.Password == "admin123")
-                {
-                    return RedirectToAction("Index", "Dashboard");
-                }
+            if (!ModelState.IsValid)
+                return View(model);
 
-                ViewBag.Error = "Invalid Username or Password";
+            if (model.Username == "admin" &&
+                model.Password == "admin123")
+            {
+                FormsAuthentication.SetAuthCookie(model.Username, model.RememberMe);
+                return RedirectToAction("Index", "Dashboard");
             }
 
-            return View(model);
+            TempData["Error"] = "Invalid username or password.";
+            return RedirectToAction("Login");
         }
+
+
+        public ActionResult Logout()
+        {
+
+            FormsAuthentication.SignOut();
+
+            return RedirectToAction("Login");
+
+        }
+
     }
 }

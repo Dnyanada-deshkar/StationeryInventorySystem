@@ -382,6 +382,33 @@ ANIMATION
     }
 }
 
+@keyframes shake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-5px);
+    }
+
+    40% {
+        transform: translateX(5px);
+    }
+
+    60% {
+        transform: translateX(-5px);
+    }
+
+    80% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 /* ===========================
 RESPONSIVE
 =========================== */
@@ -1002,3 +1029,20 @@ form {
     .login-btn:focus {
         outline: none;
     }
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 14px 20px;
+    border-radius: 14px;
+    background: #fff4f4;
+    border: 1px solid #f7c7c7;
+    color: #c0392b;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 8px 18px rgba(192,57,43,.08);
+    animation: shake .4s;
+}

@@ -28,7 +28,6 @@
 
 
 
-
 </head>
 
 <body>
@@ -99,7 +98,10 @@
 
                 </h2>
 
-                @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post  , new
+                {
+                    autocomplete = "off"
+                }))
                 {
 
                     <div class="form-group">
@@ -110,12 +112,14 @@
 
                             <i class="fa-regular fa-user"></i>
 
-                            @Html.TextBoxFor(m => m.Username, new
-                            {
-
-                            placeholder = "Enter username"
-
-                            })
+                            @Html.TextBoxFor(m => m.Username,
+new
+{
+    id = "username",
+    placeholder = "Enter username",
+    autocomplete = "off",
+    spellcheck = "false"
+})
 
                         </div>
 
@@ -129,14 +133,13 @@
 
                             <i class="fa-solid fa-lock"></i>
 
-                            @Html.PasswordFor(m => m.Password, new
-                            {
-
-                            placeholder = "Enter password",
-
-                            id = "password"
-
-                            })
+                            @Html.PasswordFor(m => m.Password,
+ new
+ {
+     placeholder = "Enter password",
+     id = "password",
+     autocomplete = "new-password"
+ })
 
                             <i class="fa-regular fa-eye"
                                onclick="togglePassword()"
@@ -164,11 +167,22 @@
 
                     </div>
 
-                    <button class="login-btn">
+                    <button class="login-btn" type="submit">
 
                         Sign In
 
                     </button>
+
+                    if (ViewBag.Error != null)
+                    {
+                        <div class="error">
+
+                            <i class="fa-solid fa-circle-exclamation"></i>
+
+                            @ViewBag.Error
+
+                        </div>
+                    }
 
                 }
 
@@ -223,6 +237,18 @@
             }
 
         }
+
+        document.getElementById("username").addEventListener("keydown", function (e) {
+
+            if (e.key === "Enter") {
+
+                e.preventDefault();
+
+                document.getElementById("password").focus();
+
+            }
+
+        });
 
     </script>
 
