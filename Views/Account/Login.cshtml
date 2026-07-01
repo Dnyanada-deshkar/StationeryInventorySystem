@@ -1,0 +1,231 @@
+﻿@model StationeryInventorySystem.Models.LoginViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/CSS/login.css")" />
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="left">
+
+            <div class="logo">
+
+                <div class="square"></div>
+
+                <div>
+
+                    <h3>Stationery<br>Inventory System</h3>
+
+                </div>
+
+            </div>
+
+            <div class="badge">
+
+                • Inventory Management Suite
+
+            </div>
+
+            <h1>
+
+                Manage inventory<br>
+
+                with confidence.
+
+            </h1>
+
+            <p>
+
+                Centralize inventory, purchasing,
+
+                stock movement and supplier
+
+                management in one secure platform.
+
+            </p>
+
+            <footer>
+
+                © 2026 Stationery Inventory System
+
+            </footer>
+
+        </div>
+
+
+
+        <div class="right">
+
+            <div class="login-card">
+
+                <span class="welcome">
+
+                    Welcome Back
+
+                </span>
+
+                <h2>
+
+                    Sign in to your account
+
+                </h2>
+
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                {
+
+                    <div class="form-group">
+
+                        <label>Username</label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-user"></i>
+
+                            @Html.TextBoxFor(m => m.Username, new
+                            {
+
+                            placeholder = "Enter username"
+
+                            })
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Password</label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            @Html.PasswordFor(m => m.Password, new
+                            {
+
+                            placeholder = "Enter password",
+
+                            id = "password"
+
+                            })
+
+                            <i class="fa-regular fa-eye"
+                               onclick="togglePassword()"
+                               id="eye"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <label>
+
+                            @Html.CheckBoxFor(m => m.RememberMe)
+
+                            Remember me
+
+                        </label>
+
+                        <a href="#">
+
+                            Forgot password?
+
+                        </a>
+
+                    </div>
+
+                    <button class="login-btn">
+
+                        Sign In
+
+                    </button>
+
+                }
+
+                <div class="divider">
+
+                    <hr>
+
+                    <span>
+
+                        or continue with
+
+                    </span>
+
+                    <hr>
+
+                </div>
+
+                <div class="shield">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function togglePassword() {
+
+            let x = document.getElementById("password");
+
+            let eye = document.getElementById("eye");
+
+            if (x.type === "password") {
+
+                x.type = "text";
+
+                eye.className = "fa-regular fa-eye-slash";
+
+            }
+
+            else {
+
+                x.type = "password";
+
+                eye.className = "fa-regular fa-eye";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
